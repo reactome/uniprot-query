@@ -1,0 +1,9 @@
+# IntelliJ Files
+*.iml
+.idea/
+
+# Compiled code
+target/
+
+# Misc.
+*.txt

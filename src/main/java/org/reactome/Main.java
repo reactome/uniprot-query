@@ -11,6 +11,7 @@ import java.util.Map;
  *         Created 3/13/2023
  */
 class Main {
+    // For testing purposes only
     public static void main(String[] args) throws IOException, InterruptedException {
 //        List<String> targetIds = Arrays.asList("P21802", "P12345");
 //        String targetDatabase = "KEGG";

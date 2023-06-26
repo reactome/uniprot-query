@@ -58,7 +58,8 @@ public class UniProtQuery {
                 Thread.sleep(sleepTimeInMilliseconds);
                 timeWaitedInMilliseconds += sleepTimeInMilliseconds;
             } else {
-                throw new RuntimeException("Waited " + timeWaitedInMilliseconds + "ms but job not finished");
+                throw new RuntimeException("Waited " + maximumWaitTimeInMinutes + "minutes but job not finished for " +
+                    uniprotIds.size() + " identifiers mapping to " + targetDatabase);
             }
         }
 
@@ -147,7 +148,8 @@ public class UniProtQuery {
                 }
             })
             .findFirst()
-            .orElseThrow(() -> new RuntimeException("Curl could not get job id"));
+            .orElseThrow(() -> new RuntimeException("Curl could not get job id from query: " +
+                curlQueryBuilder.toString()));
     }
 
     private static boolean jobFinished(String jobID) throws IOException {
